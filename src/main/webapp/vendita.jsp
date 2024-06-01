@@ -13,6 +13,27 @@
  	<title>Geek Factory - Vendita</title>
     <link rel="stylesheet" href="./css/account.css">
     <link rel="icon" href="./img/icon.png">
+<script>
+function sanitizeInput() 
+{
+    var nome = document.getElementById("nome").value;
+    var descrizione = document.getElementById("descrizione").value;
+    
+    var Nomecod = codifica(nome);
+    var Descrizionecod = codifica(descrizione);
+    
+    document.getElementById("nome").value = Nomecod;
+    document.getElementById("descrizione").value = Descrizionecod;
+}
+
+function codifica(input) {
+    return input.replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+}
+</script>
 </head>
 <body>
 	<div class="header">
